@@ -3,7 +3,7 @@ import { LazyMotion ,m , domAnimation , AnimatePresence } from "motion/react";
 
 const sliderVariants = {
   initial: { y: 0 },
-  exit: { y: "-100%" , borderRadius: "15%" },
+  exit: { y: "-100%" , borderRadius: "75%" , scale: 0.6 },
 };
 
 export default function Loader() {
@@ -20,7 +20,7 @@ export default function Loader() {
       {showLoader && (
         <m.div
           key="slider-loader"
-          className="fixed inset-0 bg-[#121212] z-100"
+          className="fixed inset-0 bg-[#141414] z-100"
           variants={sliderVariants}
           initial="initial"
           exit="exit"
