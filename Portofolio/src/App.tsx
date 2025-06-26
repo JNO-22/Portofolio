@@ -4,7 +4,7 @@ import Hero from "./components/Layout/Hero";
 import About from "./components/Layout/About";
 import Navbar from "./components/Layout/Navbar";
 import Loader from "./components/Loader";
-import Courses from "./components/Layout/Courses";
+import Cursos from "./components/Layout/Courses";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <div className="pt-20 flex flex-col gap-20">
           <Hero />
           <About/>
-          <Courses/>
+          <Cursos/>
 
           <Element name="contact">
             <motion.section
