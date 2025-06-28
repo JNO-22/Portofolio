@@ -1,10 +1,10 @@
-import { Element } from "react-scroll";
-import { motion } from "framer-motion";
 import Hero from "./components/Layout/Hero";
 import About from "./components/Layout/About";
 import Navbar from "./components/Layout/Navbar";
 import Loader from "./components/Loader";
 import Cursos from "./components/Layout/Courses";
+import Projects from "./components/Layout/Projects";
+import Contact from "./components/Layout/Contact";
 
 function App() {
   return (
@@ -14,21 +14,12 @@ function App() {
         {/* Navbar */}
         <Navbar />
         {/* Secciones */}
-        <div className="pt-20 flex flex-col gap-20">
+        <div className="pt-20 flex flex-col gap-0 md:gap-20 ">
           <Hero />
-          <About/>
-          <Cursos/>
-
-          <Element name="contact">
-            <motion.section
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="min-h-screen flex items-center justify-center"
-            >
-              <h1 className="text-3xl">Contacto</h1>
-            </motion.section>
-          </Element>
+          <About />
+          <Cursos />
+          <Projects />
+          <Contact />
         </div>
       </div>
     </>

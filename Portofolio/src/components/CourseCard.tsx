@@ -1,12 +1,28 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from "framer-motion";
 
-const CourseCard = ({ course, isActive, isInactive, onHover, onLeave, delay }) => {
+type CourseCardProps = {
+  course: {
+    title: string;
+    description: string;
+    certificateImage?: string;
+    certificateLink?: string;
+  };
+  isActive: boolean;
+  isInactive: boolean;
+  onHover: () => void;
+  onLeave: () => void;
+  delay: number;
+};
+
+const CourseCard = (props: CourseCardProps) => {
+  const { course, isActive, isInactive, onHover, onLeave, delay } = props;
+
   const hasImage = !!course.certificateImage;
   const hasLink = !!course.certificateLink;
 
-  const openImage = (e) => {
+  const openImage = (e: React.MouseEvent) => {
     e.stopPropagation();
-    window.open(course.certificateImage, '_blank');
+    window.open(course.certificateImage, "_blank");
   };
 
   return (
@@ -14,7 +30,11 @@ const CourseCard = ({ course, isActive, isInactive, onHover, onLeave, delay }) =
       className={`
         bg-[#1e1e1e] border border-gray-700 rounded-lg p-6 text-white text-center overflow-hidden
         transition-all duration-300 ease-in-out flex flex-col justify-between
-        ${isInactive ? 'scale-95 opacity-50 blur-[1px]' : 'scale-100 opacity-100'}
+        ${
+          isInactive
+            ? "scale-95 opacity-50 blur-[1px]"
+            : "scale-100 opacity-100"
+        }
       `}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +62,7 @@ const CourseCard = ({ course, isActive, isInactive, onHover, onLeave, delay }) =
           <motion.div
             key="certificado"
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4 }}
             className="overflow-hidden mt-4 rounded"
@@ -58,7 +78,9 @@ const CourseCard = ({ course, isActive, isInactive, onHover, onLeave, delay }) =
       </AnimatePresence>
 
       {!hasImage && (
-        <p className="text-xs text-gray-500 mt-4 italic">(Este curso no tiene certificado)</p>
+        <p className="text-xs text-gray-500 mt-4 italic">
+          (Este curso no tiene certificado)
+        </p>
       )}
     </motion.div>
   );

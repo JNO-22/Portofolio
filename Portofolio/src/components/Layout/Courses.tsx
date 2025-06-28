@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Element } from "react-scroll";
 import { motion } from "framer-motion";
 import CourseCard from "../CourseCard";
@@ -18,7 +18,8 @@ const courses = [
       "Capacitación profesional en back-end con Java, Spring Boot y bases de datos.",
     certificateImage: "src/assets/Alura.webp",
 
-    certificateLink: "https://cursos.alura.com/certificate/juanperez-backend",
+    certificateLink:
+      "https://app.aluracursos.com/program/certificate/c2d6bd52-7bb9-4352-96f6-06b0cab2eeae?lang",
   },
   {
     id: 3,
@@ -30,7 +31,7 @@ const courses = [
 ];
 
 const Cursos = () => {
-  const [activeId, setActiveId] = useState(null);
+  const [activeId, setActiveId] = useState<number | null>(null);
 
   return (
     <Element name="cursos" className="bg-[#161616] py-20">
@@ -42,7 +43,7 @@ const Cursos = () => {
         viewport={{ once: true }}
       >
         <motion.h2
-          className="text-4xl font-bold text-center text-white mb-12"
+          className="text-3xl sm:text-4xl font-bold text-center text-white mb-12"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -58,7 +59,7 @@ const Cursos = () => {
             return (
               <div
                 key={course.id}
-                className={`flex ${
+                className={`flex w-full ${
                   isLastOdd ? "md:col-span-2 md:justify-center" : ""
                 }`}
               >
