@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Element } from "react-scroll";
 import { motion } from "framer-motion";
 import CourseCard from "../CourseCard";
+import PythonImg from "../../assets/Python.webp";
+import AluImg from "../../assets/Alura.webp";
 
 const courses = [
   {
@@ -9,14 +11,14 @@ const courses = [
     title: "CODO A CODO - Full Stack - Python",
     description:
       "Formación en desarrollo web con Python y herramientas full stack.",
-    certificateImage: "src/assets/Python.webp",
+    certificateImage: PythonImg,
   },
   {
     id: 2,
     title: "Oracle Next Education F2 T6 Back‑end",
     description:
       "Capacitación profesional en back-end con Java, Spring Boot y bases de datos.",
-    certificateImage: "src/assets/Alura.webp",
+    certificateImage: AluImg,
 
     certificateLink:
       "https://app.aluracursos.com/program/certificate/c2d6bd52-7bb9-4352-96f6-06b0cab2eeae?lang",

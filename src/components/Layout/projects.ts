@@ -1,7 +1,10 @@
+import faunaImg from "../../assets/Fauna.webp";
+import ecocicloImg from "../../assets/Ecociclo.webp";
+
 const projects = [
   {
     title: "Fauna Veterinaria",
-    image: "src/assets/Fauna.webp",
+    image: faunaImg,
     description:
       "Plataforma para veterinarios que permite gestionar, crear y editar citas médicas. Incluye seguimiento de consultas y está hosteada en Vercel.",
     technologies: [
@@ -16,7 +19,7 @@ const projects = [
   },
   {
     title: "Ecociclo",
-    image: "src/assets/Ecociclo.webp",
+    image: ecocicloImg,
     description:
       "Proyecto educativo que simula una empresa ecológica. Permite registrar consultas usando Python y SQL, alojado en PythonAnywhere.",
     technologies: ["SQL", "Python", "Flask"],

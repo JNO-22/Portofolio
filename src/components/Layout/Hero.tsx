@@ -1,5 +1,6 @@
 import { Element } from "react-scroll";
 import { motion } from "framer-motion";
+import MeImg from "../../assets/Profile.webp";
 
 const Hero = () => {
   return (
@@ -20,7 +21,7 @@ const Hero = () => {
             </h1>
 
             <motion.img
-              src="src/assets/Profile.webp"
+              src={MeImg}
               alt="Frontend Developer"
               className="w-28 sm:w-40 lg:w-60 h-auto rounded-md shadow-lg object-contain"
               initial={{ opacity: 0, x: 30 }}
