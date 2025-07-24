@@ -31,8 +31,8 @@ const Hero = () => {
           </div>
 
           <p className="block text-lg text-gray-200 text-center max-w-xl">
-            Hola! I'm a frontend developer who loves building fast, responsive,
-            and good-looking web apps.
+            ¡Hola! Soy desarrollador Web y me encanta crear aplicaciones
+            web rápidas, responsivas y con un diseño atractivo.
           </p>
         </div>
       </motion.section>

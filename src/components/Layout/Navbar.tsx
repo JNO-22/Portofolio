@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import { useScrollDirection } from "../../hooks/useScroll";
 import { motion, AnimatePresence } from "framer-motion";
 import NavLink from "../NavLink";
@@ -6,6 +6,11 @@ import NavLink from "../NavLink";
 const Navbar = () => {
   const scrollDir = useScrollDirection(50, 100);
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  setIsMobile(window.innerWidth < 768);
+}, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -30,7 +35,7 @@ const Navbar = () => {
     <>
       <motion.nav
         initial={{ y: 0 }}
-        animate={{ y: scrollDir === "down" ? "-100%" : "0%" }}
+        animate={{ y: !isMobile && scrollDir === "down" ? "-100%" : "0%" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className="fixed top-0 left-0 w-full flex justify-between items-center py-4 px-6 z-20 backdrop-blur-sm bg-[#161616]/80"
       >

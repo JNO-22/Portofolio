@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 
 type CourseCardProps = {
   course: {
@@ -17,6 +18,11 @@ type CourseCardProps = {
 const CourseCard = (props: CourseCardProps) => {
   const { course, isActive, isInactive, onHover, onLeave, delay } = props;
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
   const hasImage = !!course.certificateImage;
   const hasLink = !!course.certificateLink;
 
@@ -58,7 +64,7 @@ const CourseCard = (props: CourseCardProps) => {
       )}
 
       <AnimatePresence>
-        {isActive && hasImage && (
+        {(isMobile ? hasImage : isActive && hasImage) && (
           <motion.div
             key="certificado"
             initial={{ opacity: 0, height: 0 }}
